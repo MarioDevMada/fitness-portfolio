@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Rivera - Coach sportif élite. Coaching personnel, en ligne et programmes de transformation pour professionnels exigeants.">
+    <title>Alex Rivera | Coach Sportif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        surface: '#111111',
+                        surface2: '#1a1a1a',
+                        text: '#e0e0e0',
+                        muted: '#aaaaaa',
+                        accent: '#39ff14',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 1s cubic-bezier(0.22,1,0.36,1) forwards',
+                        'pulse-slow': 'pulse 2s infinite 2s',
+                        'glow': 'glow 8s infinite alternate',
+                        'line': 'line 1.2s forwards 0.6s',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulse: {
+                            '0%,100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        glow: {
+                            '0%': { opacity: '0.3' },
+                            '100%': { opacity: '0.5' },
+                        },
+                        line: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100px' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        header { transition: transform 0.4s ease; }
+        header.hidden { transform: translateY(-100%); }
+    </style>
+</head>
+<body class="bg-bg text-text min-h-screen overflow-x-hidden">
+
+    <header id="header" class="fixed inset-x-0 top-0 bg-black/95 backdrop-blur-lg border-b border-accent/10 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl md:text-3xl font-black text-accent">Alex Rivera</div>
+            <div class="md:hidden text-3xl cursor-pointer" id="mobileMenu">☰</div>
+            <nav class="hidden md:flex gap-8 text-lg font-medium" id="navLinks">
+                <a href="#hero" class="hover:text-accent transition">Accueil</a>
+                <a href="#about" class="hover:text-accent transition">À propos</a>
+                <a href="#services" class="hover:text-accent transition">Services</a>
+                <a href="#testimonials" class="hover:text-accent transition">Témoignages</a>
+                <a href="#gallery" class="hover:text-accent transition">Transformations</a>
+                <a href="#contact" class="hover:text-accent transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="h-screen min-h-[600px] bg-gradient-to-b from-black/65 to-black/80 bg-cover bg-center flex items-center justify-center text-center relative overflow-hidden" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')">
+        <div class="absolute inset-0 bg-radial-gradient opacity-40 animate-glow" style="background:radial-gradient(circle at center,transparent 30%,#0a0a0a 70%)"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 opacity-0 animate-fade-up">Transformez Votre Corps.<br>Élevez Votre Vie.</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up animation-delay-400">Programmes sur mesure pour professionnels exigeants qui veulent des résultats rapides et durables.</p>
+            <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full shadow-lg opacity-0 animate-fade-up animation-delay-800 animate-pulse-slow hover:bg-white hover:scale-105 transition">Commencer Maintenant</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                À Propos de Moi
+                <span class="block w-0 h-1 bg-accent mx-auto mt-4 rounded animate-line"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop" alt="Alex Rivera" class="rounded-2xl shadow-2xl" loading="lazy"></div>
+                <div class="reveal space-y-6">
+                    <h3 class="text-3xl md:text-4xl font-black text-accent">Je suis Alex Rivera</h3>
+                    <p class="text-muted text-lg">Coach personnel certifié avec plus de 10 ans d’expérience auprès de dirigeants, entrepreneurs et professionnels à haut niveau d’exigence.</p>
+                    <p class="text-muted text-lg">Ma méthode combine science, efficacité et discipline pour obtenir des transformations physiques impressionnantes sans sacrifier votre emploi du temps chargé.</p>
+                    <p class="text-muted text-lg">Mes clients gagnent en énergie, confiance et performance globale.</p>
+                    <p class="text-lg"><strong>Certifications :</strong> NASM-CPT, Precision Nutrition Level 1, FMS, Strength & Conditioning Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Mes Services
+                <span class="block w-0 h-1 bg-accent mx-auto mt-4 rounded animate-line"></span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-accent/10 reveal hover:-translate-y-4 hover:border-accent hover:shadow-2xl transition">
+                    <h3 class="text-2xl font-bold mb-4">Coaching Personnel 1-on-1</h3>
+                    <p class="text-muted mb-6">Séances en personne dans un studio privé haut de gamme.</p>
+                    <div class="text-4xl font-black text-accent my-6">$150/séance</div>
+                    <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition">Réserver</a>
+                </article>
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-accent/10 reveal hover:-translate-y-4 hover:border-accent hover:shadow-2xl transition">
+                    <h3 class="text-2xl font-bold mb-4">Coaching En Ligne</h3>
+                    <p class="text-muted mb-6">Programme complet sur mesure avec suivi illimité.</p>
+                    <div class="text-4xl font-black text-accent my-6">$299/mois</div>
+                    <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition">Démarrer</a>
+                </article>
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-accent/10 reveal hover:-translate-y-4 hover:border-accent hover:shadow-2xl transition">
+                    <h3 class="text-2xl font-bold mb-4">Programme Transformation 12 Semaines</h3>
+                    <p class="text-muted mb-6">Programme intensif avec résultats garantis.</p>
+                    <div class="text-4xl font-black text-accent my-6">$1997</div>
+                    <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition">Postuler</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Témoignages Clients
+                <span class="block w-0 h-1 bg-accent mx-auto mt-4 rounded animate-line"></span>
+            </h2>
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <div class="flex transition-transform duration-700 ease-in-out" id="slides">
+                        <div class="min-w-full p-12 bg-surface2 text-center">
+                            <p class="text-xl italic mb-8">« Alex a totalement changé ma relation avec le sport. -35 lbs en 6 mois tout en dirigeant une équipe de 200 personnes. »</p>
+                            <h4 class="text-accent text-xl font-bold">— Michael Chen, CEO</h4>
+                        </div>
+                        <div class="min-w-full p-12 bg-surface2 text-center">
+                            <p class="text-xl italic mb-8">« Le meilleur investissement que j’ai fait pour moi-même. Programme parfait pour mes voyages fréquents. »</p>
+                            <h4 class="text-accent text-xl font-bold">— Sarah Mitchell, Avocate</h4>
+                        </div>
+                        <div class="min-w-full p-12 bg-surface2 text-center">
+                            <p class="text-xl italic mb-8">« Je n’aurais jamais cru être en aussi bonne forme à 45 ans. Approche exigeante mais durable. »</p>
+                            <h4 class="text-accent text-xl font-bold">— David Park, Entrepreneur</h4>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8" id="dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Transformations Clients
+                <span class="block w-0 h-1 bg-accent mx-auto mt-4 rounded animate-line"></span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop" alt="Transformation" class="w-full h-full object-cover transition group-hover:scale-125" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-8 text-black font-black text-xl">
+                        12 Semaines<br><strong>-28 lbs</strong>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group">
+                    <img src="https://images.unsplash.com/photo-1570541038388-8e874d182db9?q=80&w=2070&auto=format&fit=crop" alt="Transformation" class="w-full h-full object-cover transition group-hover:scale-125" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-8 text-black font-black text-xl">
+                        16 Semaines<br><strong>-35 lbs</strong>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?q=80&w=2070&auto=format&fit=crop" alt="Transformation" class="w-full h-full object-cover transition group-hover:scale-125" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-8 text-black font-black text-xl">
+                        10 Semaines<br><strong>-22 lbs</strong>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group">
+                    <img src="https://images.unsplash.com/photo-1623874386650-4d7e5d0b9f1e?q=80&w=2070&auto=format&fit=crop" alt="Transformation" class="w-full h-full object-cover transition group-hover:scale-125" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-8 text-black font-black text-xl">
+                        12 Semaines<br><strong>Tonifiée</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Contactez-Moi
+                <span class="block w-0 h-1 bg-accent mx-auto mt-4 rounded animate-line"></span>
+            </h2>
+            <form class="max-w-2xl mx-auto bg-surface2 p-10 rounded-2xl border border-accent/10 reveal" id="contactForm" novalidate>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-muted mb-2">Nom complet *</label>
+                        <input type="text" required class="w-full px-6 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 transition">
+                    </div>
+                    <div>
+                        <label class="block text-muted mb-2">Email *</label>
+                        <input type="email" required class="w-full px-6 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 transition">
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <label class="block text-muted mb-2">Téléphone</label>
+                    <input type="tel" class="w-full px-6 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 transition">
+                </div>
+                <div class="mb-10">
+                    <label class="block text-muted mb-2">Votre message *</label>
+                    <textarea rows="6" required class="w-full px-6 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-accent text-black font-bold py-5 rounded-full hover:bg-white hover:scale-105 transition shadow-lg">Envoyer le message</button>
+                <p class="mt-6 text-center font-bold" id="formMessage" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center bg-black text-muted">
+        <p>© 2025 Alex Rivera Fitness. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenu?.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('hidden');
+            mobileMenu.textContent = open ? '☰' : '✕';
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                target?.scrollIntoView({ behavior: 'smooth' });
+                if (!navLinks.classList.contains('hidden')) {
+                    navLinks.classList.add('hidden');
+                    mobileMenu.textContent = '☰';
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Header hide on scroll down
+        let lastScroll = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            const current = window.pageYOffset;
+            if (current > lastScroll && current > 120) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = current;
+        });
+
+        // Testimonial carousel
+        const slides = document.getElementById('slides');
+        const dots = document.getElementById('dots');
+        const slideList = document.querySelectorAll('#slides > div');
+        let current = 0;
+        const createDots = () => {
+            slideList.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'inline-block w-3 h-3 mx-2 rounded-full bg-gray-600 cursor-pointer transition';
+                if (i === 0) dot.classList.add('bg-accent', 'scale-150');
+                dot.onclick = () => goTo(i);
+                dots.appendChild(dot);
+            });
+        };
+        const updateDots = () => {
+            document.querySelectorAll('#dots span').forEach((d, i) => {
+                d.classList.toggle('bg-accent', i === current);
+                d.classList.toggle('scale-150', i === current);
+            });
+        };
+        const goTo = i => {
+            current = i;
+            slides.style.transform = `translateX(-${i * 100}%)`;
+            updateDots();
+        };
+        let interval = setInterval(() => { current = (current + 1) % slideList.length; goTo(current); }, 7000);
+        dots.parentElement.addEventListener('mouseenter', () => clearInterval(interval));
+        dots.parentElement.addEventListener('mouseleave', () => interval = setInterval(() => { current = (current + 1) % slideList.length; goTo(current); }, 7000));
+        createDots();
+
+        // Form
+        const form = document.getElementById('contactForm');
+        const msg = document.getElementById('formMessage');
+        form?.addEventListener('submit', e => {
+            e.preventDefault();
+            if (form.checkValidity()) {
+                msg.textContent = 'Merci ! Message envoyé.';
+                msg.style.color = '#39ff14';
+                form.reset();
+            } else {
+                msg.textContent = 'Veuillez remplir tous les champs obligatoires.';
+                msg.style.color = '#ff5555';
+            }
+        });
+    </script>
+</body>
+</html>
