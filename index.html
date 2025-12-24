@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Rivera - Coach sportif élite. Coaching personnel, en ligne et programmes de transformation pour professionnels exigeants.">
+    <title>Alex Rivera | Coach Sportif</title>
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN (Note: Use Build Step in Production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        surface: '#111111',
+                        surface2: '#1a1a1a',
+                        text: '#e0e0e0',
+                        muted: '#aaaaaa',
+                        accent: '#39ff14',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 1s cubic-bezier(0.22,1,0.36,1) forwards',
+                        'pulse-slow': 'pulse 2s infinite 2s',
+                        'glow': 'glow 8s infinite alternate',
+                        'line': 'line 1.2s forwards 0.6s',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulse: {
+                            '0%,100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        glow: {
+                            '0%': { opacity: '0.3' },
+                            '100%': { opacity: '0.5' },
+                        },
+                        line: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100px' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Base Styles */
+        body { font-feature-settings: "cv11", "ss01"; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.22,1,0.36,1); will-change: opacity, transform; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Header Transitions */
+        header { transition: transform 0.4s ease, background-color 0.3s; }
+        header.hidden-nav { transform: translateY(-100%); }
+        
+        /* Mobile Menu Transitions */
+        #navLinks { transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+        
+        /* Utility for blocking scroll */
+        body.menu-open { overflow: hidden; }
+        
+        /* Accessibility Focus Styles */
+        *:focus-visible {
+            outline: 2px solid #39ff14;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-bg text-text min-h-screen overflow-x-hidden selection:bg-accent selection:text-black">
+
+    <!-- Header -->
+    <header id="header" class="fixed inset-x-0 top-0 bg-black/95 backdrop-blur-lg border-b border-accent/10 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-black text-accent z-50 relative tracking-tighter">Alex Rivera</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-3xl cursor-pointer z-50 relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+                <span id="btnIcon">☰</span>
+            </button>
+
+            <!-- Navigation -->
+            <nav class="fixed inset-0 bg-black/98 flex flex-col items-center justify-center gap-8 text-2xl font-medium opacity-0 invisible translate-y-4 md:translate-y-0 md:static md:bg-transparent md:flex-row md:text-lg md:opacity-100 md:visible md:flex" id="navLinks">
+                <a href="#hero" class="hover:text-accent transition nav-link">Accueil</a>
+                <a href="#about" class="hover:text-accent transition nav-link">À propos</a>
+                <a href="#services" class="hover:text-accent transition nav-link">Services</a>
+                <a href="#testimonials" class="hover:text-accent transition nav-link">Témoignages</a>
+                <a href="#gallery" class="hover:text-accent transition nav-link">Transformations</a>
+                <a href="#contact" class="hover:text-accent transition nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen min-h-[600px] bg-bg relative flex items-center justify-center text-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gym ambiance dark" class="w-full h-full object-cover opacity-60" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-bg"></div>
+            <div class="absolute inset-0 bg-radial-gradient opacity-40 animate-glow" style="background:radial-gradient(circle at center,transparent 30%,#0a0a0a 70%)"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 opacity-0 animate-fade-up tracking-tight">Transformez Votre Corps.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Élevez Votre Vie.</span></h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up animation-delay-400 text-gray-300">Programmes sur mesure pour professionnels exigeants qui veulent des résultats rapides et durables.</p>
+            <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full shadow-[0_0_20px_rgba(57,255,20,0.3)] opacity-0 animate-fade-up animation-delay-800 animate-pulse-slow hover:bg-white hover:scale-105 transition transform duration-200">Commencer Maintenant</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                À Propos de Moi
+                <span class="block w-16 h-1 bg-accent mx-auto mt-4 rounded"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-accent to-gray-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=800" width="800" height="1000" alt="Alex Rivera - Coach sportif professionnel" class="relative rounded-2xl shadow-2xl w-full h-auto object-cover" loading="lazy">
+                </div>
+                <div class="reveal space-y-6">
+                    <h3 class="text-3xl md:text-4xl font-black text-accent">Je suis Alex Rivera</h3>
+                    <p class="text-muted text-lg leading-relaxed">Coach personnel certifié avec plus de 10 ans d’expérience auprès de dirigeants, entrepreneurs et professionnels à haut niveau d’exigence.</p>
+                    <p class="text-muted text-lg leading-relaxed">Ma méthode combine science, efficacité et discipline pour obtenir des transformations physiques impressionnantes sans sacrifier votre emploi du temps chargé.</p>
+                    <ul class="space-y-2 text-muted">
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Gain d'énergie quotidien</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Confiance en soi décuplée</li>
+                        <li class="flex items-center gap-2"><span class="text-accent">✓</span> Performance mentale optimisée</li>
+                    </ul>
+                    <div class="pt-4 border-t border-gray-800">
+                        <p class="text-sm text-gray-400 uppercase tracking-widest font-bold mb-2">Certifications</p>
+                        <p class="text-white">NASM-CPT • Precision Nutrition L1 • FMS • CSCS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Mes Services
+                <span class="block w-16 h-1 bg-accent mx-auto mt-4 rounded"></span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-white/5 reveal hover:-translate-y-2 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.1)] transition duration-300 flex flex-col group">
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Coaching 1-on-1</h3>
+                    <p class="text-muted mb-6 flex-grow">Séances en personne dans un studio privé haut de gamme. Correction posturale et motivation en direct.</p>
+                    <div class="text-4xl font-black text-white my-6">$150<span class="text-sm text-muted font-normal align-middle">/séance</span></div>
+                    <a href="#contact" class="inline-block bg-white/10 text-white font-bold px-8 py-4 rounded-full hover:bg-accent hover:text-black transition">Réserver</a>
+                </article>
+                
+                <!-- Service Card 2 -->
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-accent reveal relative transform md:-translate-y-4 hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.2)] transition duration-300 flex flex-col">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-black text-xs font-black uppercase px-4 py-1 rounded-full">Populaire</div>
+                    <h3 class="text-2xl font-bold mb-4 text-accent">Coaching En Ligne</h3>
+                    <p class="text-muted mb-6 flex-grow">Programme complet sur mesure via application dédiée. Vidéos d'exercices, nutrition et suivi illimité.</p>
+                    <div class="text-4xl font-black text-white my-6">$299<span class="text-sm text-muted font-normal align-middle">/mois</span></div>
+                    <a href="#contact" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-full hover:bg-white transition shadow-lg">Démarrer</a>
+                </article>
+
+                <!-- Service Card 3 -->
+                <article class="bg-surface2 p-8 rounded-2xl text-center border border-white/5 reveal hover:-translate-y-2 hover:border-accent hover:shadow-[0_10px_40px_-10px_rgba(57,255,20,0.1)] transition duration-300 flex flex-col group">
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Transformation 12 Sem.</h3>
+                    <p class="text-muted mb-6 flex-grow">Programme intensif hybride pour une métamorphose radicale. Engagement total requis.</p>
+                    <div class="text-4xl font-black text-white my-6">$1997<span class="text-sm text-muted font-normal align-middle">/total</span></div>
+                    <a href="#contact" class="inline-block bg-white/10 text-white font-bold px-8 py-4 rounded-full hover:bg-accent hover:text-black transition">Postuler</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Témoignages Clients
+                <span class="block w-16 h-1 bg-accent mx-auto mt-4 rounded"></span>
+            </h2>
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl border border-white/5 bg-surface2">
+                    <div class="flex transition-transform duration-700 ease-in-out" id="slides">
+                        <div class="min-w-full p-8 md:p-12 text-center">
+                            <div class="text-accent text-6xl opacity-30 font-serif leading-none mb-4">“</div>
+                            <p class="text-xl md:text-2xl italic mb-8 text-gray-200">Alex a totalement changé ma relation avec le sport. -35 lbs en 6 mois tout en dirigeant une équipe de 200 personnes. L'approche est chirurgicale.</p>
+                            <h4 class="text-accent text-lg font-bold uppercase tracking-widest">— Michael Chen</h4>
+                            <p class="text-sm text-gray-500">CEO, Tech Solutions</p>
+                        </div>
+                        <div class="min-w-full p-8 md:p-12 text-center">
+                             <div class="text-accent text-6xl opacity-30 font-serif leading-none mb-4">“</div>
+                            <p class="text-xl md:text-2xl italic mb-8 text-gray-200">Le meilleur investissement que j’ai fait pour moi-même. Le programme s'adapte parfaitement à mes voyages fréquents sans excuses.</p>
+                            <h4 class="text-accent text-lg font-bold uppercase tracking-widest">— Sarah Mitchell</h4>
+                            <p class="text-sm text-gray-500">Avocate International</p>
+                        </div>
+                        <div class="min-w-full p-8 md:p-12 text-center">
+                             <div class="text-accent text-6xl opacity-30 font-serif leading-none mb-4">“</div>
+                            <p class="text-xl md:text-2xl italic mb-8 text-gray-200">Je n’aurais jamais cru être en aussi bonne forme à 45 ans. C'est dur, c'est exigeant, mais les résultats sont là. Merci Alex.</p>
+                            <h4 class="text-accent text-lg font-bold uppercase tracking-widest">— David Park</h4>
+                            <p class="text-sm text-gray-500">Entrepreneur</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center pb-8 gap-3" id="dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Transformations
+                <span class="block w-16 h-1 bg-accent mx-auto mt-4 rounded"></span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Image 1 -->
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group bg-surface2">
+                    <img src="https://images.pexels.com/photos/7031411/pexels-photo-7031411.jpeg?auto=compress&cs=tinysrgb&w=800" width="800" height="1067" alt="Transformation client - 12 semaines" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-8">
+                         <p class="text-white font-bold text-center leading-tight">12 Semaines<br><span class="text-accent text-xl">-28 lbs</span></p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group bg-surface2">
+                    <img src="https://images.pexels.com/photos/7031423/pexels-photo-7031423.jpeg?auto=compress&cs=tinysrgb&w=800" width="800" height="1067" alt="Transformation client - 16 semaines" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-8">
+                         <p class="text-white font-bold text-center leading-tight">16 Semaines<br><span class="text-accent text-xl">-35 lbs</span></p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group bg-surface2">
+                    <img src="https://images.pexels.com/photos/6551126/pexels-photo-6551126.jpeg?auto=compress&cs=tinysrgb&w=800" width="800" height="1067" alt="Transformation client - 10 semaines" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-8">
+                         <p class="text-white font-bold text-center leading-tight">10 Semaines<br><span class="text-accent text-xl">-22 lbs</span></p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4] reveal group bg-surface2">
+                    <img src="https://images.pexels.com/photos/6740232/pexels-photo-6740232.jpeg?auto=compress&cs=tinysrgb&w=800" width="800" height="1067" alt="Transformation cliente - 12 semaines" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-8">
+                         <p class="text-white font-bold text-center leading-tight">12 Semaines<br><span class="text-accent text-xl">Tonifiée</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16 reveal relative">
+                Contactez-Moi
+                <span class="block w-16 h-1 bg-accent mx-auto mt-4 rounded"></span>
+            </h2>
+            <div class="reveal max-w-2xl mx-auto">
+                <form class="bg-surface2 p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl" id="contactForm" novalidate>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-muted mb-2 uppercase tracking-wide">Nom complet *</label>
+                            <input type="text" id="name" required class="w-full px-4 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white placeholder-gray-700" placeholder="Jean Dupont">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-muted mb-2 uppercase tracking-wide">Email *</label>
+                            <input type="email" id="email" required class="w-full px-4 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white placeholder-gray-700" placeholder="jean@exemple.com">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-bold text-muted mb-2 uppercase tracking-wide">Téléphone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition text-white placeholder-gray-700" placeholder="+33 6 00 00 00 00">
+                    </div>
+                    <div class="mb-8">
+                        <label for="message" class="block text-sm font-bold text-muted mb-2 uppercase tracking-wide">Votre message *</label>
+                        <textarea id="message" rows="5" required class="w-full px-4 py-4 bg-bg border border-gray-800 rounded-xl focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition resize-none text-white placeholder-gray-700" placeholder="Parlez-moi de vos objectifs..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accent text-black font-black text-lg py-5 rounded-full hover:bg-white hover:scale-[1.02] transition shadow-lg active:scale-95">ENVOYER LE MESSAGE</button>
+                    <p class="mt-6 text-center font-medium min-h-[1.5em] transition-all duration-300" id="formMessage" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center bg-black text-muted border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="mb-4 text-2xl font-black text-white">Alex Rivera</p>
+            <p class="text-sm opacity-60">© 2025 Alex Rivera Fitness. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Logic ---
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const btnIcon = document.getElementById('btnIcon');
+        const body = document.body;
+        
+        function toggleMenu() {
+            const isClosed = navLinks.classList.contains('invisible');
+            
+            if (isClosed) {
+                // Open
+                navLinks.classList.remove('invisible', 'opacity-0', 'translate-y-4');
+                btnIcon.textContent = '✕';
+                menuBtn.setAttribute('aria-expanded', 'true');
+                body.classList.add('menu-open'); // Prevent body scroll
+            } else {
+                // Close
+                navLinks.classList.add('invisible', 'opacity-0', 'translate-y-4');
+                btnIcon.textContent = '☰';
+                menuBtn.setAttribute('aria-expanded', 'false');
+                body.classList.remove('menu-open');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (body.classList.contains('menu-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // --- Smooth Scroll & Header Logic ---
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            // Don't hide header if menu is open (prevents trap)
+            if (body.classList.contains('menu-open')) return;
+
+            const current = window.pageYOffset;
+            
+            // Hide header on scroll down > 100px, show on scroll up
+            if (current > lastScroll && current > 100) {
+                header.classList.add('hidden-nav');
+            } else {
+                header.classList.remove('hidden-nav');
+            }
+            
+            // Add solid background if scrolled
+            if (current > 50) {
+                header.classList.add('bg-black/95', 'backdrop-blur-lg');
+                header.classList.remove('bg-transparent');
+            } else {
+                // Optional: make transparent at very top if desired
+            }
+            
+            lastScroll = current;
+        });
+
+        // --- Reveal Animations ---
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // --- Accessible Testimonial Carousel ---
+        const slides = document.getElementById('slides');
+        const dotsContainer = document.getElementById('dots');
+        const slideList = document.querySelectorAll('#slides > div');
+        const sliderContainer = slides.parentElement;
+        let current = 0;
+        let autoPlayInterval;
+        
+        const createDots = () => {
+            slideList.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full bg-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent';
+                dot.setAttribute('aria-label', `Voir témoignage ${i + 1}`);
+                dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+                
+                if (i === 0) dot.classList.add('bg-accent', 'w-8'); // Active state visual
+                
+                dot.addEventListener('click', () => {
+                    goTo(i);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        };
+        
+        const updateDots = () => {
+            const dots = dotsContainer.children;
+            for (let i = 0; i < dots.length; i++) {
+                const isActive = i === current;
+                dots[i].classList.toggle('bg-accent', isActive);
+                dots[i].classList.toggle('bg-gray-600', !isActive);
+                dots[i].classList.toggle('w-8', isActive);
+                dots[i].classList.toggle('w-3', !isActive);
+                dots[i].setAttribute('aria-current', isActive);
+            }
+        };
+        
+        const goTo = i => {
+            current = i;
+            slides.style.transform = `translateX(-${i * 100}%)`;
+            updateDots();
+        };
+        
+        const nextSlide = () => {
+            current = (current + 1) % slideList.length;
+            goTo(current);
+        };
+
+        const startInterval = () => {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, 7000);
+        };
+
+        const resetInterval = () => {
+            clearInterval(autoPlayInterval);
+            startInterval();
+        };
+
+        // Pause on interactions (hover & focus for a11y)
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        sliderContainer.addEventListener('mouseleave', startInterval);
+        sliderContainer.addEventListener('focusin', () => clearInterval(autoPlayInterval));
+        sliderContainer.addEventListener('focusout', startInterval);
+        
+        createDots();
+        startInterval();
+
+        // --- Form Validation ---
+        const form = document.getElementById('contactForm');
+        const msg = document.getElementById('formMessage');
+        
+        form?.addEventListener('submit', e => {
+            e.preventDefault();
+            if (form.checkValidity()) {
+                // Simulate API call
+                const btn = form.querySelector('button');
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'ENVOI EN COURS...';
+                
+                setTimeout(() => {
+                    msg.textContent = 'Message envoyé avec succès ! Je vous répondrai sous 24h.';
+                    msg.className = 'mt-6 text-center font-medium min-h-[1.5em] text-accent';
+                    form.reset();
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }, 1500);
+            } else {
+                msg.textContent = 'Veuillez remplir tous les champs obligatoires correctement.';
+                msg.className = 'mt-6 text-center font-medium min-h-[1.5em] text-red-500';
+            }
+        });
+    </script>
+</body>
+</html>
